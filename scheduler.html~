@@ -1,0 +1,349 @@
+<html>
+<script type="text/javascript">
+//Variables containing the HTML code for the streams.
+fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://54.198.58.79/foxnewsradio-foxnewsaac-ibc2'></source></audio></div></p>";
+ib = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://64.150.176.192:8254/live'></source></audio></div></p>";
+crime = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://216.235.85.35/play?s=amamericaotr&d=PROAD&r=0&membername=&session=1444791826-251770&AuthType=NORMAL&app_id=live365%3ABROWSER&SaneID=1'></source></audio></div></p>";
+cnn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/cnn'></source></audio></div></p>";
+cent = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://audioartsradio.com:6006/;&type=mp3'></source></audio></div></p>";
+vcy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://72.13.86.203:8000/;&type=mp3'></source></audio></div></p>";
+espn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://54.205.52.210/espn-espntvmp3-48'></source></audio></div></p>";
+csp = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://edgev1.den.echo.liquidcompass.net/WCSPFMMP3'></source></audio></div></p>";
+stat = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://209.85.88.199:1007/;'></source></audio></div></p>";
+cbs = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://6093.live.streamtheworld.com:80/CBSNEWS_SC'></source></audio></div></p>";
+wcrh = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://ice23.securenetsystems.net/WCRH64'></source></audio></div></p>";
+travel = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://www.live365.com/play/amateurtraveler?tag=itunes&sid=&lid=&from=pls'></source></audio></div></p>";
+superman = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://lin2.ash.fast-serv.com:9022'></source></audio></div></p>";
+caps = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://3153.live.streamtheworld.com/CAPS_RADIO_24_7_SC'></source></audio></div></p>";
+comedy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://www.live365.com/play/amamericacomedy/listen.pls'></source></audio></div></p>";
+hannity = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></source></audio></div></p>";
+laura = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://noxsolutions.mp3.miisolutions.net/nox/laura'></source></audio></div></p>";
+herd = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' type='audio/quicktime' src='http://playlists.ihrhls.com/c1/6973/playlist.m3u8'></source></audio></div></p>";
+// The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
+var control = 0
+// Variable indicating what stream is playing.
+var set2 = "none";
+// Alternative variable indicating whether hockey is playing or not.
+var on;
+// An audio object.
+var Audio;
+divs = document.getElementsByTagName("div");
+ps = document.getElementsByTagName("p");
+buttons = document.getElementsByTagName("button");
+source = document.getElementsByTagName("audio");
+Audio = source[0];
+var currentdate = new Date();
+hours = currentdate.getHours();
+minutes = currentdate.getMinutes();
+seconds = currentdate.getSeconds();
+day = currentdate.getDay();
+if (day == 0 || day == 6) {
+	weekend = "true";
+	}
+if (day > 0 && day < 6) {
+	weekend = "false";
+	}
+	//
+	document.write("<p>Loading...<br />Loading...<div></div></p>")
+function Check() {
+	currentdate = new Date();
+	hours = currentdate.getHours();
+	minutes = currentdate.getMinutes();
+	seconds = currentdate.getSeconds();
+	day = currentdate.getDay();
+	if (day == 0 || day == 6) {
+		weekend = "true";
+		}
+	if (day > 0 && day < 6) {
+		weekend = "false";
+		}
+if (on == "caps" && set2 != "caps" && control == 2) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Hockey<br />TBD to TBD" + caps;
+	set2 = "caps";
+	on == "caps";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "fnt" && hours > -1 && hours < 11 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Fox News Reruns<br />Midnight to 11 AM" + fnt;
+	set2 = "fnt";                                                                                                                                             
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "cbs" && hours == 11 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>CBS Radio News<br />11 AM to NOON" + cbs;
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "herd" && hours == 12 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>The Herd<br />NOON to 1 PM" + herd;
+	set2 = "herd";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "laura" && hours == 13 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>The Laura Ingraham Show<br />1 PM to 2 PM" + laura;
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "hannity" && hours == 14 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>The Sean Hannity Show<br />2 PM to 3 PM" + hannity;
+	set2 = "hannity";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 15 && minutes < 32 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />3 PM to 3:32 PM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "cbs" && hours == 15 && minutes > 31 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>CBS Radio News<br />3:32 PM to 4 PM" + cbs;
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "superman" && hours == 16 && minutes < 31 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Superman<br />4 PM to 4:30 PM" + superman;
+	set2 = "superman";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "cbs" && hours == 16 && minutes > 30 && minutes < 42 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>CBS Radio News<br />4:30 PM to 4:42 PM" + cbs;
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+	//
+	//
+if (set2 != "vcy" && hours == 16 && minutes > 41 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Stories of Great Christians<br />4:42 PM to 5 PM" + vcy;
+	set2 = "vcy";
+	div_content = divs[0].innerHTML;
+	}
+	//
+	//
+if (set2 != "vcy" && hours == 17 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />5 PM to 5:30 PM" + vcy;
+	set2 = "vcy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "vcy" && hours == 17 && minutes > 29 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Unshackled<br />5:30 PM to 6 PM" + vcy;
+	set2 = "vcy";
+	div_content = divs[0].innerHTML;
+	}
+	//
+	//
+if (set2 != "cent" && hours > 17 && hours < 23 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />6 PM to 11 PM" + cent;
+	set2 = "cent";
+	div_content = divs[0].innerHTML;
+	}
+	//
+	//
+if (set2 != "fnt" && hours == 23 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Fox News Reruns<br />11 PM to Midnight" + fnt;
+	set2 = "fnt";
+	div_content = divs[0].innerHTML;
+	}
+//SATURDAY
+if (set2 != "cent" && hours > -1 && hours < 8 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />Midnight to 8 AM" + cent;
+	set2 = "cent";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "cent" && hours == 8 && minutes < 29 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />8 AM to 8:29" + cent;
+	set2 = "cent";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "wcrh" && hours == 8 && minutes > 28 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />8:29 AM to 9 AM" + wcrh;
+	set2 = "wcrh";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 9 && minutes < 29 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />9 AM to 9:29 AM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "wcrh" && hours == 9 && minutes > 28 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />9:30 AM to 10 AM" + wcrh;
+	set2 = "wcrh";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "wcrh" && hours == 10 && minutes < 30 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />10 AM to 10:30 AM" + wcrh;
+	set2 = "wcrh";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 10 && minutes > 30 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />10:30 AM to 11 AM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "espn" && hours == 11 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>SportsCenter<br />11 AM to NOON" + espn;
+	set2 = "espn";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours > 11 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />NOON to 10 PM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "stat" && hours == 22 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Reconstruction Radio w/ David Thulin<br /> 10 PM to 11 PM" + stat;
+	set2 = "stat";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 23 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br /> 11 PM to Midnight" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+//SUNDAY
+if (set2 != "comedy" && hours > -1 && hours < 3 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br /> Midnight to 3 AM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "espn" && hours > 2 && hours < 8 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>ESPNews<br />3 AM to 8 AM" + espn;
+	set2 = "espn";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours > 7 && hours < 24 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />8 AM to Midnight" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+	document.title = "WPYT - 24/7 Radio Entertainment";
+	Audio = source[0];
+}
+function Control() {
+	just_set = 0
+	if (control == 0 && just_set != 1) {
+		divs[0].innerHTML="Paused</p>";
+		control = 1;
+		just_set = 1
+	}
+	if (control == 1 && just_set != 1) {
+		divs[0].innerHTML=div_content;
+		just_set = 1;
+		control = 0;
+		Check()
+	}
+}
+Check()
+myVar = setInterval(Check, 1000);
+window.i = 0
+function buttonFunction() {
+	if (window.i > 1) {
+		window.i = 0;
+	}
+	if (window.i == 0) {
+		var currentdate = new Date();
+		hours = currentdate.getHours();
+		minutes = currentdate.getMinutes();
+		seconds = currentdate.getSeconds();
+		days = currentdate.getDay();
+		months = currentdate.getMonth();
+		years = currentdate.getFullYear();
+		years_to_seconds = years * 11404800;
+		months_to_seconds = months * 950400;
+		days_to_seconds = days * 86400;
+		hours_to_seconds = hours * 3600;
+		minutes_to_seconds = minutes * 60;
+		window.start_time = years_to_seconds + months_to_seconds + days_to_seconds + hours_to_seconds + minutes_to_seconds + seconds;
+	}
+	if (window.i == 1) {
+		var currentdate = new Date();
+		hours2 = currentdate.getHours();
+		minutes2 = currentdate.getMinutes();
+		seconds2 = currentdate.getSeconds();
+		days2 = currentdate.getDay();
+		months2 = currentdate.getMonth();
+		years2 = currentdate.getFullYear();
+		years_to_seconds2 = years2 * 11404800;
+		months_to_seconds2 = months2 * 950400;
+		days_to_seconds2 = days2 * 86400;
+		hours_to_seconds2 = hours2 * 3600;
+		minutes_to_seconds2 = minutes2 * 60;
+		end_time = years_to_seconds2 + months_to_seconds + days_to_seconds2 + hours_to_seconds2 + minutes_to_seconds2 + seconds2;
+		total_tim = end_time - window.start_time;
+		total_time = total_tim.toString();
+		alert("It's been " + total_time + " seconds since you hit the button.");
+		document.cookie="timeittook=" + total_time;
+	}
+	window.i = window.i + 1;
+	document.title = "Talk Radio Channel - 24/7 Radio News";
+}
+function ClearCaps() {
+	hockey();
+	hockey();
+}
+function Hockey() {
+	on = "caps";
+	control = 2;
+}
+function hockey() {
+	console.log("Hockey() was run.");
+	console.log("Set2: " + set2);
+	console.log("Control: " + control);
+	just_set = 0
+	if (control == 0 && just_set != 1) {
+		buttons[1].innerHTML="Switch from Hockey"
+		divs[0].innerHTML="<div><audio loop='loop' autoplay='autoplay' onerror='Control()' controls><source onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://3153.live.streamtheworld.com/CAPS_RADIO_24_7_SC'></source></audio></div></p>";
+		set2 = "caps";
+		control = 2;
+		just_set = 1
+	}
+	if (control == 2 && just_set != 1) {
+		buttons[1].innerHTML="Switch to Hockey"
+		divs[0].innerHTML=div_content;
+		set2 = "none";
+		on = "caps";
+		just_set = 1;
+		control = 0;
+		Check()
+	}
+	console.log("Set2: " + set2);
+	console.log("Control: " + control);
+}
+function Clear() {
+	if (set2 != "none") {
+		console.log("ERROR 400: Unidentified Error Playing Stream " + set2 + ".");
+		ps[0].innerHTML = "<p>Null<br />TBD to TBD<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br />";
+		divs[0].innerHTML="<div>An error ocurred. We will attempt to reconnect at the soonest possible opportunity.</div></p>";
+		set2 = "none";
+		on = "none";
+		control = 0
+	}
+}
+document.title = "Talk Radio Channel - 24/7 Radio News";
+</script>
