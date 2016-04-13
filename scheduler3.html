@@ -1,7 +1,7 @@
 <html>
 <script type="text/javascript">
 //Variables containing the HTML code for the streams.
-fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://23.22.214.193/foxnewsradio-foxnewsaac-ibc2?session-id=614391039&source=TuneIn'></source></audio></div></p>";
+fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://23.22.214.193/foxnewsradio-foxnewsaac-ibc2?session-id=614391039&source=TuneIn'></source></audio></div></p>";
 ib = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://64.150.176.192:8254/live'></source></audio></div></p>";
 crime = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://216.235.85.35/play?s=amamericaotr&d=PROAD&r=0&membername=&session=1444791826-251770&AuthType=NORMAL&app_id=live365%3ABROWSER&SaneID=1'></source></audio></div></p>";
 cnn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/cnn'></source></audio></div></p>";
@@ -19,6 +19,9 @@ comedy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick=
 hannity = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></source></audio></div></p>";
 laura = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://icy3.abacast.com/centennialb-wfvaammp3-64'></source></audio></div></p>";
 herd = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://herd-pr.akacast.akamaistream.net/7/966/363324/v1/auth.akacast.akamaistream.net/herd-pr'></source></audio></div></p>";
+wbal = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://14163.live.streamtheworld.com/WBALAMAAC'></source></audio></div></p>";
+bang = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/comedybangbang'></source></audio></div></p>";
+gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio loop='loop' autoplay='autoplay' onerror='Clear()' controls><source  onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://107.181.227.250:8166/stream'></source></audio></div></p>";
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -76,34 +79,22 @@ if (set2 != "cbs" && hours == 11 && weekend == "false" && control == 0 && set2 !
 	set2 = "cbs";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "herd" && hours == 12 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "wbal" && hours == 12 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>The Herd<br />NOON to 1 PM" + herd;
-	set2 = "herd";
+	ps[0].innerHTML = "<p>C4<br />NOON to 1 PM" + wbal;
+	set2 = "wbal";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "laura" && hours == 13 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "bang" && hours == 13 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>The Laura Ingraham Show<br />1 PM to 2 PM" + laura;
-	set2 = "laura";
+	ps[0].innerHTML = "<p>Comedy Bang Bang!<br />1 PM to 2 PM" + bang;
+	set2 = "bang";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "hannity" && hours == 14 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 13 && hours < 16 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>The Sean Hannity Show<br />2 PM to 3 PM" + hannity;
-	set2 = "hannity";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours == 15 && minutes < 32 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />3 PM to 3:32 PM" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br />2 PM to 4 PM" + comedy;
 	set2 = "comedy";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "cbs" && hours == 15 && minutes > 31 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>CBS Radio News<br />3:32 PM to 4 PM" + cbs;
-	set2 = "cbs";
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "superman" && hours == 16 && minutes < 31 && weekend == "false" && control == 0 && set2 != "caps") {
@@ -187,27 +178,9 @@ if (set2 != "wcrh" && hours == 9 && minutes > 28 && day == 6 && control == 0 && 
 	set2 = "wcrh";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "wcrh" && hours == 10 && minutes < 30 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 9 && hours < 17 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />10 AM to 10:30 AM" + wcrh;
-	set2 = "wcrh";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours == 10 && minutes > 30 && day == 6 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />10:30 AM to 11 AM" + comedy;
-	set2 = "comedy";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "espn" && hours == 11 && day == 6 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>SportsCenter<br />11 AM to NOON" + espn;
-	set2 = "espn";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours > 11 && hours < 17 && day == 6 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />NOON to 6 PM" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br />10 AM to 6 PM" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
@@ -217,34 +190,22 @@ if (set2 != "cent" && hours > 17 && hours < 22 && day == 6 && control == 0 && se
 	set2 = "cent";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "stat" && hours == 22 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "gunsmoke" && hours == 22 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Reconstruction Radio w/ David Thulin<br /> 10 PM to 11 PM" + stat;
-	set2 = "stat";
+	ps[0].innerHTML = "<p>Gunsmoke<br /> 10 PM to 11 PM" + gunsmoke;
+	set2 = "gunsmoke";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "stat" && hours == 23 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours == 23 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Jam The Hype<br /> 11 PM to Midnight" + stat;
-	set2 = "stat";
-	div_content = divs[0].innerHTML;
-	}
-//SUNDAY
-if (set2 != "comedy" && hours > -1 && hours < 3 && day == 0 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br /> Midnight to 3 AM" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br /> 11 PM to Midnight" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "espn" && hours > 2 && hours < 8 && day == 0 && control == 0 && set2 != "caps") {
+//SUNDAY
+if (set2 != "comedy" && hours > -1 && hours < 24 && day == 0 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>ESPNews<br />3 AM to 8 AM" + espn;
-	set2 = "espn";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours > 7 && hours < 24 && day == 0 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />8 AM to Midnight" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br /> Midnight to Midnight" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
