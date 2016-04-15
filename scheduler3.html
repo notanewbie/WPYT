@@ -67,9 +67,27 @@ if (on == "caps" && set2 != "caps" && control == 2) {
 	on == "caps";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "fnt" && hours > -1 && hours < 11 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "cbs" && hours == 0 && minutes < 2 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Fox News Reruns<br />Midnight to 11 AM" + fnt;
+	ps[0].innerHTML = "<p>CBS Radio News<br />12:02 AM to 11 AM" + cbs;
+	set2 = "cbs";                                                                                                                                             
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "fnt" && hours == 0 && minutes == 2 && seconds > 9 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Fox News Reruns<br />12:02 AM to 11 AM" + fnt;
+	set2 = "fnt";                                                                                                                                             
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "fnt" && hours == 0 && minutes > 2 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Fox News Reruns<br />12:02 AM to 11 AM" + fnt;
+	set2 = "fnt";                                                                                                                                             
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "fnt" && hours > 0 && hours < 11 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Fox News Reruns<br />12:02 AM to 11 AM" + fnt;
 	set2 = "fnt";                                                                                                                                             
 	div_content = divs[0].innerHTML;
 	}
