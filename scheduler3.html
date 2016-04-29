@@ -231,6 +231,7 @@ if (set2 != "comedy" && hours > -1 && hours < 24 && day == 0 && control == 0 && 
 	Audio = source[0];
 }
 function Control() {
+	console.log("Control() was run.");
 	just_set = 0
 	if (control == 0 && just_set != 1) {
 		divs[0].innerHTML="Paused</p>";
@@ -289,10 +290,12 @@ function buttonFunction() {
 	document.title = "Talk Radio Channel - 24/7 Radio News";
 }
 function ClearCaps() {
+	console.log("ClearCaps() was run.")
 	hockey();
 	hockey();
 }
 function Hockey() {
+	console.log("Hockey() was run.")
 	on = "caps";
 	control = 2;
 }
@@ -321,6 +324,7 @@ function hockey() {
 	console.log("Control: " + control);
 }
 function Clear() {
+	console.log("Clear() was run")
 	if (set2 != "none") {
 		console.log("ERROR 400: Unidentified Error Playing Stream " + set2 + ".");
 		ps[0].innerHTML = "<p>Null<br />TBD to TBD<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br />";
