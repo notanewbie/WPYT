@@ -1,27 +1,60 @@
 <html>
 <script type="text/javascript">
+function PrintDate() {
+	var currentdate = new Date();
+	hours = currentdate.getHours();
+	minutes = currentdate.getMinutes();
+	seconds = currentdate.getSeconds();
+	days = currentdate.getDay();
+	months = currentdate.getMonth();
+	years = currentdate.getFullYear();
+	if(minutes < 10) {
+		minutes = "0" + minutes
+	}
+	if(seconds < 10) {
+		seconds = "0" + seconds
+	}
+	if(hours == 12) {
+		return hours + ":" +  minutes + ":" + seconds + " PM"
+	}
+	else if(hours > 12) {
+		hours = hours - 12
+		return hours + ":" +  minutes + ":" + seconds + " PM"
+	}
+	else if(hours == 0) {
+		hours = 12
+		return hours + ":" +  minutes + ":" + seconds + " AM"
+	}
+	else {
+		return hours + ":" +  minutes + ":" + seconds + " AM"
+	}
+}
+function ConsoleDate() {
+	console.log(PrintDate())
+}
+console.log("Program start time: " + PrintDate())
 //Variables containing the HTML code for the streams.
-fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://23.22.214.193/foxnewsradio-foxnewsaac-ibc2?session-id=614391039&source=TuneIn'></source></audio></div></p>";
-ib = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://64.150.176.192:8254/live'></source></audio></div></p>";
-crime = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://216.235.85.35/play?s=amamericaotr&d=PROAD&r=0&membername=&session=1444791826-251770&AuthType=NORMAL&app_id=live365%3ABROWSER&SaneID=1'></source></audio></div></p>";
-cnn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/cnn'></source></audio></div></p>";
-cent = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://audioartsradio.com:6006/;&type=mp3'></source></audio></div></p>";
-vcy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://72.13.86.203:8000/;&type=mp3'></source></audio></div></p>";
-espn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://54.205.52.210/espn-espntvmp3-48'></source></audio></div></p>";
-csp = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://edgev1.den.echo.liquidcompass.net/WCSPFMMP3'></source></audio></div></p>";
-stat = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://fire.wavestreamer.com:5102/;'></source></audio></div></p>";
-cbs = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://6093.live.streamtheworld.com:80/CBSNEWS_SC'></source></audio></div></p>";
-wcrh = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://ice23.securenetsystems.net/WCRH64'></source></audio></div></p>";
-travel = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://www.live365.com/play/amateurtraveler?tag=itunes&sid=&lid=&from=pls'></source></audio></div></p>";
-superman = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://lin2.ash.fast-serv.com:9022'></source></audio></div></p>";
-caps = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15233.live.streamtheworld.com/CAPS_RADIO_24_7_SC'></source></audio></div></p>";
-comedy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://s1.viastreaming.net:9160/;'></source></audio></div></p>";
-hannity = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></source></audio></div></p>";
-laura = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://icy3.abacast.com/centennialb-wfvaammp3-64'></source></audio></div></p>";
-herd = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://herd-pr.akacast.akamaistream.net/7/966/363324/v1/auth.akacast.akamaistream.net/herd-pr'></source></audio></div></p>";
-wbal = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://14163.live.streamtheworld.com/WBALAMAAC_SC'></source></audio></div></p>";
-bang = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/comedybangbang'></source></audio></div></p>";
-gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://107.181.227.250:8166/stream'></source></audio></div></p>";
+fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://23.22.214.193/foxnewsradio-foxnewsaac-ibc2?session-id=614391039&source=TuneIn'></source></audio></div></p>";
+ib = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://64.150.176.192:8254/live'></source></audio></div></p>";
+crime = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://216.235.85.35/play?s=amamericaotr&d=PROAD&r=0&membername=&session=1444791826-251770&AuthType=NORMAL&app_id=live365%3ABROWSER&SaneID=1'></source></audio></div></p>";
+cnn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/cnn'></source></audio></div></p>";
+cent = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://audioartsradio.com:6006/;&type=mp3'></source></audio></div></p>";
+vcy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://72.13.86.203:8000/;&type=mp3'></source></audio></div></p>";
+espn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://54.205.52.210/espn-espntvmp3-48'></source></audio></div></p>";
+csp = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://edgev1.den.echo.liquidcompass.net/WCSPFMMP3'></source></audio></div></p>";
+stat = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://fire.wavestreamer.com:5102/;'></source></audio></div></p>";
+cbs = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://6093.live.streamtheworld.com:80/CBSNEWS_SC'></source></audio></div></p>";
+wcrh = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://ice23.securenetsystems.net/WCRH64'></source></audio></div></p>";
+travel = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://www.live365.com/play/amateurtraveler?tag=itunes&sid=&lid=&from=pls'></source></audio></div></p>";
+superman = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://lin2.ash.fast-serv.com:9022'></source></audio></div></p>";
+caps = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15233.live.streamtheworld.com/CAPS_RADIO_24_7_SC'></source></audio></div></p>";
+comedy = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://s1.viastreaming.net:9160/;'></source></audio></div></p>";
+hannity = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></source></audio></div></p>";
+laura = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://icy3.abacast.com/centennialb-wfvaammp3-64'></source></audio></div></p>";
+herd = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://herd-pr.akacast.akamaistream.net/7/966/363324/v1/auth.akacast.akamaistream.net/herd-pr'></source></audio></div></p>";
+wbal = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://14163.live.streamtheworld.com/WBALAMAAC_SC'></source></audio></div></p>";
+bang = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/comedybangbang'></source></audio></div></p>";
+gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear()'>Switch from Hockey</button><br /><div><audio onsuspend='Clear()' onstalled='Clear()' enended='Clear()' autoplay='autoplay' onerror='Clear()' controls><source onsuspend='Clear()' onstalled='Clear()' enended='Clear()' onerror='Clear()' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://107.181.227.250:8166/stream'></source></audio></div></p>";
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -85,15 +118,9 @@ if (set2 != "wbal" && hours == 12 && weekend == "false" && control == 0 && set2 
 	set2 = "wbal";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "bang" && hours == 13 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 12 && hours < 16 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy Bang Bang!<br />1 PM to 2 PM" + bang;
-	set2 = "bang";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours > 13 && hours < 16 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />2 PM to 4 PM" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br />1 PM to 4 PM" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
@@ -219,6 +246,7 @@ if (set2 != "comedy" && hours > -1 && hours < 24 && day == 0 && control == 0 && 
 	Audio = source[0];
 }
 function Control() {
+	ConsoleDate()
 	console.log("Control() was run.");
 	just_set = 0
 	if (control == 0 && just_set != 1) {
@@ -278,16 +306,19 @@ function buttonFunction() {
 	document.title = "Talk Radio Channel - 24/7 Radio News";
 }
 function ClearCaps() {
+	ConsoleDate()
 	console.log("ClearCaps() was run.")
 	hockey();
 	hockey();
 }
 function Hockey() {
+	ConsoleDate()
 	console.log("Hockey() was run.")
 	on = "caps";
 	control = 2;
 }
 function hockey() {
+	ConsoleDate()
 	console.log("Hockey() was run.");
 	console.log("Set2: " + set2);
 	console.log("Control: " + control);
@@ -312,6 +343,7 @@ function hockey() {
 	console.log("Control: " + control);
 }
 function Clear() {
+	ConsoleDate()
 	console.log("Clear() was run")
 	if (set2 != "none") {
 		console.log("ERROR 400: Unidentified Error Playing Stream " + set2 + ".");
