@@ -345,14 +345,26 @@ function hockey() {
 }
 function Clear(ERROR) {
 	ConsoleDate()
-	console.log("Clear(this.error) was run")
+	console.log("Clear() was run")
 	if (set2 != "none") {
-		console.log("ERROR " + ERROR + " Playing Stream " + set2 + ".");
 		ps[0].innerHTML = "<p>Null<br />TBD to TBD<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br />";
 		divs[0].innerHTML="<div>An error ocurred. We will attempt to reconnect at the soonest possible opportunity.</div></p>";
 		set2 = "none";
 		on = "none";
 		control = 0
+		console.log(ERROR + " occured.")
+		if(ERROR.code == 1) {
+			console.log("ERROR 1: Stream Aborted While Playing Stream " + set2 + ".");
+		}
+		if(ERROR.code == 2) {
+			console.log("ERROR 2: Network Error While Playing Stream " + set2 + ".");
+		}
+		if(ERROR.code == 3) {
+			console.log("ERROR 3: Error Decoding Stream Data While Playing Stream " + set2 + ".");
+		}
+		if(ERROR.code == 4) {
+			console.log("ERROR 4: Codec Not Supported While Playing Stream " + set2 + ".");
+		}
 	}
 }
 document.title = "Talk Radio Channel - 24/7 Radio News";
