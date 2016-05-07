@@ -352,7 +352,9 @@ function Clear(ERROR) {
 		set2 = "none";
 		on = "none";
 		control = 0
-		console.log(ERROR + " occured.")
+		if(ERROR == null) {
+			console.log("Stream was paused.")
+		}
 		if(ERROR.code == 1) {
 			console.log("ERROR 1: Stream Aborted While Playing Stream " + set2 + ".");
 		}
