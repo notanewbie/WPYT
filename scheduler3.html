@@ -224,15 +224,9 @@ if (set2 != "cent" && hours > 16 && hours < 22 && day == 6 && control == 0 && se
 	set2 = "cent";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "gunsmoke" && hours == 22 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 21 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Gunsmoke<br /> 10 PM to 11 PM" + gunsmoke;
-	set2 = "gunsmoke";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours == 23 && day == 6 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br /> 11 PM to Midnight" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br /> 10 PM to Midnight" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
