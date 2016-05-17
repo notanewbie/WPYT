@@ -361,16 +361,16 @@ function Clear(ERROR) {
 		if(ERROR == null) {
 			console.log("Stream was paused.")
 		}
-		if(ERROR.code == 1) {
+		else if(ERROR.code == 1) {
 			console.log("ERROR 1: Stream Aborted While Playing Stream " + set2 + ".");
 		}
-		if(ERROR.code == 2) {
+		else if(ERROR.code == 2) {
 			console.log("ERROR 2: Network Error While Playing Stream " + set2 + ".");
 		}
-		if(ERROR.code == 3) {
+		else if(ERROR.code == 3) {
 			console.log("ERROR 3: Error Decoding Stream Data While Playing Stream " + set2 + ".");
 		}
-		if(ERROR.code == 4) {
+		else if(ERROR.code == 4) {
 			console.log("ERROR 4: Codec Not Supported While Playing Stream " + set2 + ".");
 		}
 	}
