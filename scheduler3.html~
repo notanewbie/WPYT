@@ -76,7 +76,7 @@ hours = currentdate.getHours();
 minutes = currentdate.getMinutes();
 seconds = currentdate.getSeconds();
 day = currentdate.getDay();
-months = currentdate.getMonth()
+months = currenddate.getMonth()
 month = months + 1
 if (day == 0 || day == 6) {
 	weekend = "true";
