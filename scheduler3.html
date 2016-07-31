@@ -58,6 +58,7 @@ bang = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='C
 gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://107.181.227.250:8166/stream'></source></audio></div></p>";
 saturnx = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player10/playlist.php?name=listen.pls'></source></audio></div></p>";
 crimex = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player8/playlist.php?name=listen.m3u'></source></audio></div></p>";
+deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://stream.falconinternet.net:8014/;'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -209,28 +210,10 @@ if (set2 != "superman" && hours > 17 && hours < 23 && weekend == "false" && cont
 	}
 	//
 	//
-if (set2 != "cbs" && hours == 23 && minutes == 0 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "deace" && hours == 23 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>CBS Radio News<br />11 PM to 11:01 PM" + cbs;
-	set2 = "cbs";                                                                                                                                             
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "cbs" && hours == 23 && minutes == 1 && seconds < 56 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>CBS Radio News<br />11 PM to 11:01 PM" + cbs;
-	set2 = "cbs";                                                                                                                                             
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "fnt" && hours == 23 && minutes == 1 && seconds > 55 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Fox News Reruns<br />11:01 PM to Midnight" + fnt;
-	set2 = "fnt";                                                                                                                                             
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "fnt" && hours == 23 && minutes > 1 && seconds > 50 && weekend == "false" && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Fox News Reruns<br />11:01 PM to Midnight" + fnt;
-	set2 = "fnt";                                                                                                                                             
+	ps[0].innerHTML = "<p>Steve Deace Show<br />11 PM to Midnight" + deace;
+	set2 = "deace";
 	div_content = divs[0].innerHTML;
 	}
 //SATURDAY
