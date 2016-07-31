@@ -59,6 +59,7 @@ gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclic
 saturnx = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player10/playlist.php?name=listen.pls'></source></audio></div></p>";
 crimex = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player8/playlist.php?name=listen.m3u'></source></audio></div></p>";
 deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15073.live.streamtheworld.com/WGTKAMAAC_SC'></source></audio></div></p>"
+cain = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://cmg.streamguys1.com/atl750/cain247im-sgplayer-aac'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -190,6 +191,13 @@ if (set2 != "crimex" && hours > 20 && hours < 23 && weekend == "false" && contro
 	set2 = "crimex";
 	div_content = divs[0].innerHTML;
 	}
+/*if (set2 != "cain" && hours == 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 7) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>The Herman Cain Show<br />10 PM to 11 PM" + cain;
+	set2 = "cain";
+	div_content = divs[0].innerHTML;
+	}
+*/
 	//
 	//
 	//WINTER PRIMETIME SEASON
