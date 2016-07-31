@@ -58,7 +58,7 @@ bang = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='C
 gunsmoke = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://107.181.227.250:8166/stream'></source></audio></div></p>";
 saturnx = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player10/playlist.php?name=listen.pls'></source></audio></div></p>";
 crimex = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://rokradio.com/player8/playlist.php?name=listen.m3u'></source></audio></div></p>";
-deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://stream.falconinternet.net:8014/;'></source></audio></div></p>"
+deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15073.live.streamtheworld.com/WGTKAMAAC_SC'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -235,10 +235,10 @@ if (set2 != "wcrh" && hours == 8 && minutes > 28 && day == 6 && control == 0 && 
 	set2 = "wcrh";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "comedy" && hours == 9 && minutes < 29 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "vcy" && hours == 9 && minutes < 29 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />9 AM to 9:29 AM" + comedy;
-	set2 = "comedy";
+	ps[0].innerHTML = "<p>Children's Bible Hour<br />9 AM to 9:29 AM" + vcy;
+	set2 = "vcy";
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "wcrh" && hours == 9 && minutes > 28 && day == 6 && control == 0 && set2 != "caps") {
@@ -247,13 +247,31 @@ if (set2 != "wcrh" && hours == 9 && minutes > 28 && day == 6 && control == 0 && 
 	set2 = "wcrh";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "comedy" && hours > 9 && hours < 17 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "vcy" && hours == 10 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Kid's Programming<br />10 AM to 11:45 PM" + vcy;
+	set2 = "vcy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "vcy" && hours == 11 && minutes < 46 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Kid's Programming<br />10 AM to 11:45 PM" + vcy;
+	set2 = "vcy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 11 && minutes > 45 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />10 AM to 11:45 PM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours > 11 && hours < 18 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Comedy<br />10 AM to 6 PM" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "cent" && hours > 16 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "cent" && hours > 17 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Drama<br />6 PM to 10 PM" + cent;
 	set2 = "cent";
