@@ -191,10 +191,22 @@ if (set2 != "comedy" && hours > 17 && hours < 20 && weekend == "false" && contro
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "crimex" && hours > 19 && hours < 23 && weekend == "false" && control == 0 && set2 != "caps" && month > 7 && month != 11) {
+if (set2 != "crimex" && hours > 19 && hours < 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 7 && month != 11) {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Drama<br />8 PM to 11 PM" + crimex;
 	set2 = "crimex";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "crimex" && hours == 22 && minutes < 59 && weekend == "false" && control == 0 && set2 != "caps" && month > 7 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />8 PM to 10:59 PM" + crimex;
+	set2 = "crimex";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "deace" && hours == 22 && minutes == 59 && weekend == "false" && control == 0 && set2 != "caps" && month > 7 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>The Steve Deave Show<br />10:59 PM to Midnight" + deace;
+	set2 = "deace";
 	div_content = divs[0].innerHTML;
 	}
 	//
@@ -225,7 +237,7 @@ if (set2 != "superman" && hours > 17 && hours < 23 && weekend == "false" && cont
 	//
 if (set2 != "deace" && hours == 23 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Steve Deace Show<br />11 PM to Midnight" + deace;
+	ps[0].innerHTML = "<p>Steve Deace Show<br />10:59 PM to Midnight" + deace;
 	set2 = "deace";
 	div_content = divs[0].innerHTML;
 	}
