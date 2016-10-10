@@ -60,6 +60,11 @@ saturnx = "<br /><br /><button onclick='Control()'>Pause</button><button onclick
 crimex = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://listen2.britishradio.uk:8039/;'></source></audio></div></p>";
 deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15073.live.streamtheworld.com/WGTKAMAAC_SC'></source></audio></div></p>"
 cain = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://cmg.streamguys1.com/atl750/cain247im-sgplayer-aac'></source></audio></div></p>"
+amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
+marielle1 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle1.MP3'></source></audio></div></p>"
+local = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='local.MP3'></source></audio></div></p>"
+marielle2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle2.MP3'></source></audio></div></p>"
+promos = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='WPYT1 Serena.m4a'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -191,16 +196,28 @@ if (set2 != "comedy" && hours > 17 && hours < 20 && weekend == "false" && contro
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "crimex" && hours > 19 && hours < 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+if (set2 != "crimex" && hours == 20 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />8 PM to 11 PM" + crimex;
+	ps[0].innerHTML = "<p>Drama<br />8 PM to 9 PM" + crimex;
 	set2 = "crimex";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "crimex" && hours == 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+if (set2 != "promos" && hours == 21 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />8 PM to 11 PM" + crimex;
-	set2 = "crimex";
+	ps[0].innerHTML = "<p>Off-Air<br />9 PM to 10:30 PM" + promos;
+	set2 = "promos";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "promos" && hours == 22 && minutes < 31 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Off-Air<br />9 PM to 10:30 PM" + promos;
+	set2 = "promos";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "amar" && hours == 22 && minutes > 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Amar Payton<br />10:30 PM to 11 PM" + amar;
+	set2 = "amar";
 	div_content = divs[0].innerHTML;
 	}
 	//
@@ -290,9 +307,21 @@ if (set2 != "comedy" && hours > 11 && hours < 18 && day == 6 && control == 0 && 
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "cent" && hours > 17 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "marielle1" && hours == 18 && minutes < 31 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />6 PM to 10 PM" + cent;
+	ps[0].innerHTML = "<p>Marielle Payton<br />6 PM to 6:30 PM" + marielle1;
+	set2 = "marielle1";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "amar" && hours == 18 && minutes > 30 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Marielle Payton<br />6:30 PM to 7 PM" + amar;
+	set2 = "amar";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "cent" && hours > 18 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />7 PM to 10 PM" + cent;
 	set2 = "cent";
 	div_content = divs[0].innerHTML;
 	}
@@ -303,10 +332,22 @@ if (set2 != "comedy" && hours > 21 && day == 6 && control == 0 && set2 != "caps"
 	div_content = divs[0].innerHTML;
 	}
 //SUNDAY
-if (set2 != "comedy" && hours > -1 && hours < 24 && day == 0 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > -1 && hours < 17 && day == 0 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br /> Midnight to Midnight" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br /> Midnight to 5 PM" + comedy;
 	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "local" && hours == 17 && minutes < 31 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Payton Sunday News<br />5 PM to 5:30 PM" + local;
+	set2 = "local";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "marielle2" && hours == 17 && minutes > 30 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Marielle Payton Presents<br />5:30 PM to 6 PM" + marielle2;
+	set2 = "marielle2";
 	div_content = divs[0].innerHTML;
 	}
 	document.title = "WPYT - 24/7 Radio Entertainment";
