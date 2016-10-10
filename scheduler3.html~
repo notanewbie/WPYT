@@ -190,9 +190,15 @@ if (set2 != "cain" && hours == 22 && weekend == "false" && control == 0 && set2 
 	//
 	//
 	//FALL PRIMETIME SEASON
-if (set2 != "comedy" && hours > 17 && hours < 20 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+if (set2 != "amar" && hours == 18 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 4 && month < 9) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />6 PM to 8 PM" + comedy;
+	ps[0].innerHTML = "<p>This Show with Amar Payton<br />6 PM to 6:30 PM" + amar;
+	set2 = "amar";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 18 && minutes > 29 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />6:30 PM to 8 PM" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
@@ -214,7 +220,7 @@ if (set2 != "promos" && hours == 22 && minutes < 31 && weekend == "false" && con
 	set2 = "promos";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "amar" && hours == 22 && minutes > 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+if (set2 != "amar" && hours == 22 && minutes > 29 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Amar Payton<br />10:30 PM to 11 PM" + amar;
 	set2 = "amar";
@@ -315,7 +321,7 @@ if (set2 != "marielle1" && hours == 18 && minutes < 31 && day == 6 && control ==
 	}
 if (set2 != "amar" && hours == 18 && minutes > 30 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Marielle Payton<br />6:30 PM to 7 PM" + amar;
+	ps[0].innerHTML = "<p>That Show with Amar Payton<br />6:30 PM to 7 PM" + amar;
 	set2 = "amar";
 	div_content = divs[0].innerHTML;
 	}
@@ -348,6 +354,12 @@ if (set2 != "marielle2" && hours == 17 && minutes > 30 && day == 0 && control ==
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Marielle Payton Presents<br />5:30 PM to 6 PM" + marielle2;
 	set2 = "marielle2";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours > 17 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />6 PM to Midnight" + comedy;
+	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
 	document.title = "WPYT - 24/7 Radio Entertainment";
