@@ -60,11 +60,11 @@ saturnx = "<br /><br /><button onclick='Control()'>Pause</button><button onclick
 crimex = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://listen2.britishradio.uk:8039/;'></source></audio></div></p>";
 deace = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://15073.live.streamtheworld.com/WGTKAMAAC_SC'></source></audio></div></p>"
 cain = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://cmg.streamguys1.com/atl750/cain247im-sgplayer-aac'></source></audio></div></p>"
-amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
 marielle1 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle.MP3'></source></audio></div></p>"
 local = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='local.MP3'></source></audio></div></p>"
 marielle2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle.MP3'></source></audio></div></p>"
 promos = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='WPYT1 Serena.m4a'></source></audio></div></p>"
+amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -190,13 +190,19 @@ if (set2 != "cain" && hours == 22 && weekend == "false" && control == 0 && set2 
 	//
 	//
 	//FALL PRIMETIME SEASON
-if (set2 != "amar" && hours == 18 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 4 && month < 9) {
+if (set2 != "amar" && hours == 18 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month !=11) {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>This Show with Amar Payton<br />6 PM to 6:30 PM" + amar;
 	set2 = "amar";
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "comedy" && hours == 18 && minutes > 29 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Comedy<br />6:30 PM to 8 PM" + comedy;
+	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "comedy" && hours == 19 && weekend == "false" && control == 0 && set2 != "caps" && month > 8 && month != 11) {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Comedy<br />6:30 PM to 8 PM" + comedy;
 	set2 = "comedy";
