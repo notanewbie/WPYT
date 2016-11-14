@@ -35,7 +35,7 @@ function ConsoleDate() {
 }
 console.log("Program start time: " + PrintDate())
 //Variables containing the HTML code for the streams.
-fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://23.22.214.193/foxnewsradio-foxnewsaac-ibc2?session-id=614391039&source=TuneIn'></source></audio></div></p>";
+fnt = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://65.19.131.138/foxnewsradio-foxnewsmp3-ibc2'></source></audio></div></p>";
 ib = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://64.150.176.192:8254/live'></source></audio></div></p>";
 crime = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://216.235.85.35/play?s=amamericaotr&d=PROAD&r=0&membername=&session=1444791826-251770&AuthType=NORMAL&app_id=live365%3ABROWSER&SaneID=1'></source></audio></div></p>";
 cnn = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='hockey()'>Switch to Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://tunein.streamguys1.com/cnn'></source></audio></div></p>";
@@ -65,6 +65,7 @@ local = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='
 marielle2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle.MP3'></source></audio></div></p>"
 promos = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='WPYT1 Serena.m4a'></source></audio></div></p>"
 amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
+xmas = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://198.105.214.140:5827/Live'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -235,9 +236,15 @@ if (set2 != "amar" && hours == 22 && minutes > 29 && weekend == "false" && contr
 	//
 	//
 	//WINTER PRIMETIME SEASON
-if (set2 != "saturnx" && hours > 17 && hours < 23 && weekend == "false" && control == 0 && set2 != "caps" && month == 11) {
+if (set2 != "xmas" && hours > 17 && hours < 20 && weekend == "false" && control == 0 && set2 != "caps" && month == 11) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />6 PM to 11 PM" + saturnx;
+	ps[0].innerHTML = "<p>Christmas Songs<br />6 PM to 8 PM" + xmas;
+	set2 = "xmas";
+	div_content = divs[0].innerHTML;
+	}
+	if (set2 != "saturnx" && hours > 19 && hours < 23 && weekend == "false" && control == 0 && set2 != "caps" && month == 11) {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Drama<br />8 PM to 11 PM" + saturnx;
 	set2 = "saturnx";
 	div_content = divs[0].innerHTML;
 	}
