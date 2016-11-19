@@ -366,12 +366,16 @@ if (set2 != "marielle1" && hours == 18 && minutes < 31 && day == 6 && control ==
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Marielle Payton<br />6 PM to 6:30 PM" + marielle1;
 	set2 = "marielle1";
+	past = minutes
+	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "amar" && hours == 18 && minutes > 30 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>That Show with Amar Payton<br />6:30 PM to 7 PM" + amar;
 	set2 = "amar";
+	past = minutes - 30
+	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "cent" && hours > 18 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
@@ -393,16 +397,20 @@ if (set2 != "comedy" && hours > -1 && hours < 17 && day == 0 && control == 0 && 
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "local" && hours == 17 && minutes < 31 && day == 0 && control == 0 && set2 != "caps") {
+if (set2 != "amar" && hours == 17 && minutes < 31 && day == 0 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Payton Sunday News<br />5 PM to 5:30 PM" + local;
-	set2 = "local";
+	ps[0].innerHTML = "<p>That Show with Amar Payton<br />5 PM to 5:30 PM" + amar;
+	set2 = "amar";
+	past = minutes
+	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "marielle2" && hours == 17 && minutes > 30 && day == 0 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Marielle Payton Presents<br />5:30 PM to 6 PM" + marielle2;
+	ps[0].innerHTML = "<p>Marielle Payton<br />5:30 PM to 6 PM" + marielle2;
 	set2 = "marielle2";
+	past = minutes - 30
+	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "comedy" && hours > 17 && day == 0 && control == 0 && set2 != "caps") {
