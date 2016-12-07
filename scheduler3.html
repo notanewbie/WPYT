@@ -65,6 +65,7 @@ local = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='
 marielle2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='marielle.MP3'></source></audio></div></p>"
 promos = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio enended='Clear(this.error)' autoplay='autoplay' loop='yes' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='WPYT1 Serena.m4a'></source></audio></div></p>"
 amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
+amar2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' autoplay='yes' src='amar2.MP3'></source></audio></div></p>"
 xmas = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source volume=0.7 onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://198.105.214.140:5827/Live'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
@@ -244,10 +245,10 @@ if (set2 != "amar" && hours == 22 && minutes > 29 && weekend == "false" && contr
 	//
 	//WINTER PRIMETIME SEASON
 	var audio = document.getElementById("myaudio");
-if (set2 != "amar" && hours == 18 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 10) {
+if (set2 != "amar2" && hours == 18 && minutes < 30 && weekend == "false" && control == 0 && set2 != "caps" && month > 10) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>This Show with Amar Payton<br />6 PM to 6:30 PM" + amar;
-	set2 = "amar";
+	ps[0].innerHTML = "<p>This Show with Amar Payton (rerun)<br />6 PM to 6:30 PM" + amar2;
+	set2 = "amar2";
 	var audio = document.getElementById("myaudio");
 	past = minutes
 	audio.currentTime = past * 60 + seconds;
