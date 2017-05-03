@@ -67,6 +67,7 @@ promos = "<br /><br /><button onclick='Control()'>Pause</button><button onclick=
 amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' autoplay='yes' src='amar.MP3'></source></audio></div></p>"
 amar2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' autoplay='yes' src='amar 2.MP3'></source></audio></div></p>"
 xmas = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source volume=0.7 onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://198.105.214.140:5827/Live'></source></audio></div></p>"
+info = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source volume=0.7 onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://stream-mp3-us.infowars.com/;'></source></audio></div></p>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -190,10 +191,10 @@ if (set2 != "cent" && hours > 17 && hours < 22 && weekend == "false" && control 
 	set2 = "cent";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "hannity" && hours == 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 4 && month < 9) {
+if (set2 != "info" && hours == 22 && weekend == "false" && control == 0 && set2 != "caps" && month > 4 && month < 9) {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>The Sean Hannity Show<br />10 PM to 11 PM" + hannity;
-	set2 = "hannity";
+	ps[0].innerHTML = "<p>Infowars with Alex Jones<br />10 PM to 11 PM" + info;
+	set2 = "info";
 	div_content = divs[0].innerHTML;
 	}
 	//
