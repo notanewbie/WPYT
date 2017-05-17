@@ -1,0 +1,57 @@
+<html>
+<audio src="intro.mp3" type="audio/mp3"></audio>
+<iframe onload="javascript:LoadWidget()" id="lure" width="100%" height="600" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/135934116&amp;enable_api=true&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+</html>
+<script type="text/javascript">
+//alert("Hey!")
+Boom = "http://162.13.25.174/urw14a2kb"
+</script>
+<script type="text/javascript" src="https://w.soundcloud.com/player/api.js" />
+<script type="text/javascript">
+var iframeElement   = document.querySelector('iframe');
+var iframeElementID = iframeElement.id;
+var widget1         = SC.Widget(iframeElement)
+</script>
+<script type="text/javascript">
+//alert("It is running. Kinda.")
+var iframeElement   = document.getElementsByTagName('iframe');
+var iframeElementID = iframeElement.id;
+var widget1         = SC.Widget(iframeElement[0])
+//alert("It's on.")
+//var player = SC.getPlayer('102641127')
+console.log("Window has " + Object.keys(window).length)
+console.log("window's Object is " + Object.getOwnPropertyNames(window))
+DatMap = new window.Map()
+//alert(DatMap)
+console.log("SC has " + Object.keys(window.SC).length)
+console.log("SC is " + Object.getOwnPropertyNames(window.SC))
+console.log("SC.Widget() has " + Object.getOwnPropertyNames(window.SC.Widget("lure")))
+//setTimeout(LoadWidget, 1000)
+function GotIt(response) {
+	//alert("GotIt is now running")
+	//alert(response)
+	i = 0
+	for(key in response) {
+		i = i + 1
+	}
+	//alert(i)
+	i = i - 1
+	MyWidget.skip(Math.floor((Math.random() * i) + 0));
+	//alert(Object.keys(MyWidget).length)
+	//alert("Properties of MyWidget: " + Object.getOwnPropertyNames(MyWidget))
+	MyWidget.bind(SC.Widget.Events.FINISH, function() { MyWidget.skip(Math.floor((Math.random() * 100) + 1)) })
+	
+}
+function LoadWidget() {
+	MyWidget = window.SC.Widget("lure");
+	//alert(Object.keys(MyWidget.getSounds(GotIt)).length)
+	GetSounds = Object.keys(MyWidget.getSounds(GotIt)).length
+}
+//tracks = window.SC.Widget('/user/183/tracks')
+//alert(window.SC.get(iframeElementID))
+//alert('Latest track: ' + tracks[0].title);
+</script>
+<script type="text/javascript">
+
+
+</script>
