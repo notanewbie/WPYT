@@ -396,15 +396,9 @@ if (set2 != "cent" && hours > 18 && hours < 21 && day == 6 && control == 0 && se
 	set2 = "cent";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "wajp" && hours == 21 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 20 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Megamixes<br />9 PM to 10 PM" + wajp;
-	set2 = "wajp";
-	div_content = divs[0].innerHTML;
-	}
-if (set2 != "comedy" && hours > 21 && day == 6 && control == 0 && set2 != "caps") {
-	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br /> 10 PM to Midnight" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br /> 9 PM to Midnight" + comedy;
 	set2 = "comedy";
 	div_content = divs[0].innerHTML;
 	}

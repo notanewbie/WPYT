@@ -68,6 +68,7 @@ amar = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='C
 amar2 = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' enended='Clear(this.error)' autoplay='autoplay' controls><source enended='Clear(this.error)' width='10%'  height='4%' id='vlc' autoplay='yes' src='amar 2.MP3'></source></audio></div></p>"
 xmas = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source volume=0.7 onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://198.105.214.140:5827/Live'></source></audio></div></p>"
 info = "<br /><br /><button onclick='Control()'>Pause</button><button onclick='Clear(this.error)'>Switch from Hockey</button><br /><div><audio id='myaudio' onsuspend='Clear(this.error)'  enended='Clear(this.error)' autoplay='autoplay' onerror='Clear(this.error)' controls><source volume=0.7 onsuspend='Clear(this.error)'  enended='Clear(this.error)' onerror='Clear(this.error)' width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' src='http://stream-mp3-us.infowars.com/;'></source></audio></div></p>"
+wajp = "<br /><iframe src='wajp.html' width=100% height=90%></iframe>"
 // The control variable tells check() whether or not the stream is paused or playing hockey or not. 0 = playing, 1 = paused, and 2 = playing hockey.
 var control = 0
 // Variable indicating what stream is playing.
@@ -142,10 +143,16 @@ if (set2 != "wbal" && hours == 12 && weekend == "false" && control == 0 && set2 
 	set2 = "wbal";
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "comedy" && hours > 12 && hours < 16 && weekend == "false" && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 12 && hours < 15 && weekend == "false" && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Comedy<br />1 PM to 4 PM" + comedy;
+	ps[0].innerHTML = "<p>Comedy<br />1 PM to 3 PM" + comedy;
 	set2 = "comedy";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "wajp" && hours == 15 && weekend == "false" && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Megamixes<br />3 PM to 4 PM" + wajp;
+	set2 = "wajp";
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "superman" && hours == 16 && minutes < 31 && weekend == "false" && control == 0 && set2 != "caps") {
@@ -383,10 +390,16 @@ if (set2 != "amar" && hours == 18 && minutes > 29 && day == 6 && control == 0 &&
 	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "cent" && hours > 18 && hours < 22 && day == 6 && control == 0 && set2 != "caps") {
+if (set2 != "cent" && hours > 18 && hours < 21 && day == 6 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
-	ps[0].innerHTML = "<p>Drama<br />7 PM to 10 PM" + cent;
+	ps[0].innerHTML = "<p>Drama<br />7 PM to 9 PM" + cent;
 	set2 = "cent";
+	div_content = divs[0].innerHTML;
+	}
+if (set2 != "wajp" && hours == 21 && day == 6 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Megamixes<br />9 PM to 10 PM" + wajp;
+	set2 = "wajp";
 	div_content = divs[0].innerHTML;
 	}
 if (set2 != "comedy" && hours > 21 && day == 6 && control == 0 && set2 != "caps") {
@@ -418,7 +431,7 @@ if (set2 != "marielle2" && hours == 17 && minutes > 30 && day == 0 && control ==
 	audio.currentTime = past * 60 + seconds;
 	div_content = divs[0].innerHTML;
 	}
-if (set2 != "comedy" && hours > 17 && day == 0 && control == 0 && set2 != "caps") {
+if (set2 != "comedy" && hours > 17 && hours < 22 && day == 0 && control == 0 && set2 != "caps") {
 	divs[0].innerHTML="";
 	ps[0].innerHTML = "<p>Comedy<br />6 PM to Midnight" + comedy;
 	set2 = "comedy";
@@ -427,6 +440,12 @@ if (set2 != "comedy" && hours > 17 && day == 0 && control == 0 && set2 != "caps"
 	document.title = "WPYT - 24/7 Radio Entertainment";
 	Audio = source[0];
 }
+if (set2 != "wajp" && hours > 21 && day == 0 && control == 0 && set2 != "caps") {
+	divs[0].innerHTML="";
+	ps[0].innerHTML = "<p>Megamixes<br />10 PM to Midnight" + wajp;
+	set2 = "wajp";
+	div_content = divs[0].innerHTML;
+	}
 function Control() {
 	ConsoleDate()
 	console.log("Control() was run.");
